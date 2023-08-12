@@ -1,0 +1,29 @@
+.circular {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #ff2600; /* Color de fondo del botón */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.contenedor {
+  display: flex;
+  height: 89.9vh;
+  justify-content: center;
+  align-items: center;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
