@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
+  async showAlert() {
+    const alert = await this.alertController.create({
+      header: '¡Auxilio Enviado!',
+      message: 'Tu auxilio ha sido enviado correctamente.',
+     // buttons: ['Aceptar'],
+    });
+
+    await alert.present();
+  }
 
 }

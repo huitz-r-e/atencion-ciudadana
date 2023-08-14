@@ -1,9 +1,7 @@
 <ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-button class="contenedor">
-      <div class="circular">
-          <ion-label class="text">¡Presioname! <br><br> si estas en peligro</ion-label>
-      </div>
-    </ion-button>
-  </ion-header>
+  <ion-button color="light" class="circular-button" (click)="showAlert()">
+    <div class="circular">
+      <ion-label>¡Presioname! <br><br> si estas en peligro</ion-label>
+  </div>
+  </ion-button>
 </ion-content>
