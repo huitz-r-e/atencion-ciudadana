@@ -9,7 +9,7 @@
         <ion-card-content>
           <ion-card-subtitle>Descripción:</ion-card-subtitle>
           {{p.descripcion}}
-          <ion-button (click)="deleteContact(p.id)" slot="end" color="danger" size="default">
+          <ion-button (click)="presentDeleteAlert(p.id)" slot="end" color="danger" size="default">
             <ion-icon name="trash-outline"></ion-icon>
           </ion-button>
         </ion-card-content>

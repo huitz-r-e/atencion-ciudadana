@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab10',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class Tab10Page{
   data: any = [];
 
-  constructor(private http: HttpClient,private router: Router) {
+  constructor(private http: HttpClient,private router: Router, private alertController: AlertController) {
     this.getP();
   }
 
@@ -48,6 +49,30 @@ export class Tab10Page{
   redirectToTab5() {
     // Redireccionar a la página tab5
     this.router.navigateByUrl('/tabs-admin/tab5');
+  }
+
+  async presentDeleteAlert(id: number) {
+    const alert = await this.alertController.create({
+      header: 'Eliminar publicidad',
+      message: '¿Estás seguro de que deseas eliminar esta publicidad?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Eliminación cancelada');
+          }
+        }, {
+          text: 'Eliminar',
+          handler: () => {
+            this.deleteContact(id);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }
