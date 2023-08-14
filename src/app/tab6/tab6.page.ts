@@ -2,19 +2,19 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-tab6',
+  templateUrl: './tab6.page.html',
+  styleUrls: ['./tab6.page.scss'],
 })
-export class Tab3Page {
+export class Tab6Page{
   data: any = [];
 
   constructor(private http: HttpClient) {
-    this.getC();
-  }
+    this.getU();
+   }
 
-  getC(){
-    const url = 'http://localhost/atencion_ciudadana/ver_contactos.php'; // Cambia la URL según tu configuración
+   getU(){
+    const url = 'http://localhost/atencion_ciudadana/ver_usuarios.php'; // Cambia la URL según tu configuración
     this.http.get<any[]>(url).subscribe(
       (data) => {
         this.data = data;
@@ -27,3 +27,4 @@ export class Tab3Page {
   }
 
 }
+

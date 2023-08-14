@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-card *ngFor="let u of data">
+      <ion-card-header>
+        <ion-card-title>{{u.nombre}}
+        <ion-card-subtitle>{{u.telefono}}</ion-card-subtitle>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-subtitle>No.Auxilio: {{u.id_auxilio}}</ion-card-subtitle>
+      </ion-card-content>
+      <ion-card-content>
+        <!--<ion-label>
+          Politicas:
+          <ion-text color="success" *ngIf="u.politicas === 1">Aceptado</ion-text>
+          <ion-text color="danger" *ngIf="u.politicas !== 1">Rechazado</ion-text>
+        </ion-label>-->
+      </ion-card-content>
+    </ion-card>
+  </ion-header>
+</ion-content>

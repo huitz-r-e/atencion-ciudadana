@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="8" offset-md="2">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Título</ion-label>
+              <ion-input [(ngModel)]="title" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Descripción</ion-label>
+              <ion-input [(ngModel)]="description" type="text" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <input type="file" (change)="handleImageUpload($event)">
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-md="8" offset-md="2">
+          <ion-button expand="full" color="primary" (click)="submitForm()">Publicar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <ion-list>
+      <ion-item>
+        <ion-label position="floating">Floating Label</ion-label>
+        <ion-input [(ngModel)]="title" type="text" placeholder="Enter text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input [(ngModel)]="title" type="text"></ion-input>
+      </ion-item>--
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="description" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <input type="file" (change)="handleImageUpload($event)">
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" color="primary" (click)="submitForm()">Publicar</ion-button> -->
+</ion-content>

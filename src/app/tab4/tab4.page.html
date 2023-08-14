@@ -6,14 +6,23 @@
 
 <ion-content [fullscreen]="true">
   <ion-header>
-    <form action="">
-      <ion-input aria-label="Danger input" color="danger" label="Usuario" label-placement="floating" fill="solid"></ion-input>
-      <br>
-      <ion-input aria-label="Danger input" color="danger" label="Contraseña" label-placement="floating" fill="solid"></ion-input>
-      <br>
-      <ion-button  class="boton" color="success">
-        <ion-label>Iniciar Sesion</ion-label>
-      </ion-button>
-    </form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input aria-label="Usuario" [(ngModel)]="username" type="text" required="Usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input aria-label="Contraseña" [(ngModel)]="password" type="password" required="Contraseña"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="full" (click)="onLogin()">Iniciar Sesión</ion-button>
+    </div>
+
+    <div class="ion-padding">
+      <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+    </div>
   </ion-header>
 </ion-content>
