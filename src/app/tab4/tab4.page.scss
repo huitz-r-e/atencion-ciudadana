@@ -1,18 +1,25 @@
-/* login.component.scss */
-// ion-item {
-//   --ion-item-background: #f8f8f8;
-//   --ion-text-color: #333;
-//   --highlight-color-focused: transparent; /* Remueve el resaltado de color cuando el input está enfocado */
-// }
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+}
 
-ion-input {
-  border: 2px solid #ddd;
+.login-form {
+  width: 90%;
+  max-width: 400px;
+  background-color: #ffffff;
   border-radius: 8px;
-  padding: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-item {
+  margin-bottom: 16px;
 }
 
 ion-button {
-  margin-top: 10px;
-  --background: #4CAF50;
+  --background: darkred;
+  --color: white;
+  margin-top: 16px;
 }
-

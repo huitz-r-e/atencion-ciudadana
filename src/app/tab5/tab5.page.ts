@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab5',
@@ -11,7 +12,7 @@ export class Tab5Page{
   description: string = '';
   image: File | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router,private route: ActivatedRoute) { }
 
   handleImageUpload(event: any) {
     this.image = event.target.files[0];
@@ -36,12 +37,17 @@ export class Tab5Page{
         this.title = '';
         this.description = '';
         this.image = null;
-        
+
       },
       (error) => {
         console.error('Error al crear la publicación:', error);
       }
     );
+  }
+
+  redirectToTab10() {
+    // Redireccionar a la página tab9 con el mismo ID para forzar la actualización
+    this.router.navigate(['/tabs-admin/tab10']);
   }
 
 

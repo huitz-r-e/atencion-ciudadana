@@ -23,23 +23,10 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <!-- <ion-list>
-      <ion-item>
-        <ion-label position="floating">Floating Label</ion-label>
-        <ion-input [(ngModel)]="title" type="text" placeholder="Enter text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Título</ion-label>
-        <ion-input [(ngModel)]="title" type="text"></ion-input>
-      </ion-item>--
-      <ion-item>
-        <ion-label position="floating">Descripción</ion-label>
-        <ion-input [(ngModel)]="description" type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Imagen</ion-label>
-        <input type="file" (change)="handleImageUpload($event)">
-      </ion-item>
-    </ion-list>
-    <ion-button expand="full" color="primary" (click)="submitForm()">Publicar</ion-button> -->
+    <!-- Botón flotante para redirigir a tab7 -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="redirectToTab10()">
+      <ion-icon name="arrow-undo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

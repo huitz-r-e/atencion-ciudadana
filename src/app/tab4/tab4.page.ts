@@ -29,7 +29,7 @@ export class Tab4Page {
           this.menuCtrl.enable(false, 'tabs');
 
           // Redirigir a la página tabs-admin
-          this.navCtrl.navigateForward('tabs-admin'); // Ajusta la ruta según tu configuración
+          this.navCtrl.navigateForward('tabs-admin/tab10'); // Ajusta la ruta según tu configuración
 
           // Iniciar sesión
           localStorage.setItem('loggedIn', 'true');

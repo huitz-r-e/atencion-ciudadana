@@ -1,8 +1,8 @@
-<!--<ion-header [translucent]="true">
+<!-- --<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>tab4</ion-title>
   </ion-toolbar>
-</ion-header>-->
+</ion-header>--
 
 <ion-content [fullscreen]="true">
   <ion-header>
@@ -25,4 +25,25 @@
       <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
     </div>
   </ion-header>
+</ion-content> -->
+
+<ion-content [fullscreen]="true" class="login-page">
+  <ion-list class="login-form">
+    <ion-item class="input-item">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="username" type="text" required></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password" required></ion-input>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="full" (click)="onLogin()">
+        Iniciar Sesión
+      </ion-button>
+    </div>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+  </div>
 </ion-content>

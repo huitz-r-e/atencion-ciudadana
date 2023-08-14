@@ -14,13 +14,11 @@ ion-content {
     margin-bottom: -1px;
     margin-left: -1px;
     margin-right: -1px;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s;
 
     ion-label {
       color: white;
