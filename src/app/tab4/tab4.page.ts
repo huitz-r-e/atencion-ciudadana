@@ -11,6 +11,7 @@ export class Tab4Page {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
+  isLoginValid: boolean = false;
 
   constructor(private menuCtrl: MenuController, private navCtrl: NavController, private authService: ApiServiceService) { }
 
@@ -20,7 +21,6 @@ export class Tab4Page {
         if (response.success) {
           // Aquí puedes redirigir a otra página o realizar acciones necesarias
           console.log('Inicio de sesión exitoso');
-
           // Restablecer los valores de los campos de entrada
           this.username = '';
           this.password = '';

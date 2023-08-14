@@ -16,6 +16,7 @@ export class TabsAdminPage {
   logout() {
     // Cierra sesión (implementa esta función en tu servicio de autenticación si es necesario)
     this.apiService.logout();
+    console.log('Sesión Cerrada');
     // Redirige a la carpeta de pestañas (tabs)
     this.navCtrl.navigateRoot('/tabs');
     //recarga la pagina de tabs

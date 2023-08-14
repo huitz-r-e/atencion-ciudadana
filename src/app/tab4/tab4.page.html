@@ -1,48 +1,31 @@
-<!-- --<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tab4</ion-title>
-  </ion-toolbar>
-</ion-header>--
-
-<ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input aria-label="Usuario" [(ngModel)]="username" type="text" required="Usuario"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input aria-label="Contraseña" [(ngModel)]="password" type="password" required="Contraseña"></ion-input>
-      </ion-item>
-    </ion-list>
-
-    <div class="ion-padding">
-      <ion-button expand="full" (click)="onLogin()">Iniciar Sesión</ion-button>
-    </div>
-
-    <div class="ion-padding">
-      <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
-    </div>
-  </ion-header>
-</ion-content> -->
-
 <ion-content [fullscreen]="true" class="login-page">
-  <ion-list class="login-form">
-    <ion-item class="input-item">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input [(ngModel)]="username" type="text" required></ion-input>
-    </ion-item>
-    <ion-item class="input-item">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="password" type="password" required></ion-input>
-    </ion-item>
-    <div class="ion-padding">
-      <ion-button expand="full" (click)="onLogin()">
-        Iniciar Sesión
-      </ion-button>
-    </div>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
+        <h1 style="position: inherit;text-align: center;">
+          <ion-text color="primary">Administrador</ion-text>
+          <ion-card-subtitle color="danger">personal autorizado</ion-card-subtitle>
+        </h1>
+        <ion-list>
+          <ion-item class="input-item">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input [(ngModel)]="username" type="text" required></ion-input>
+          </ion-item>
+          <ion-item class="input-item">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input [(ngModel)]="password" type="password" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
+        <ion-button [disabled]="!username || !password" expand="full" (click)="onLogin()">
+          Iniciar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <div class="ion-padding">
     <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
   </div>
