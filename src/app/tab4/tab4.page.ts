@@ -68,6 +68,8 @@ export class Tab4Page {
     });
   }
 
+  emailExists=false;
+
   signUp() {
     this.authFireS.signUp(this.username, this.password)
     .then((userCredential) => {
@@ -84,13 +86,21 @@ export class Tab4Page {
       const userRef = ref(database, 'users/' + user.uid);
       set(userRef, userData);
       this.navCtrl.navigateForward('tabs-admin/tab10');
+      this.emailExists=false;
     })
 
     .catch((error) => {
       // Manejar errores de inicio de sesión
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error('Error al iniciar sesión:', error);
+      console.error('Error al iniciar sesión:', errorMessage);
+      if (errorCode == 'auth/email-already-in-use') {
+        // The account already exists with a different credential
+        const emailUser = error.email;
+        console.log(emailUser);
+        this.emailExists=true;
+        
+      }
     });
   }
 
