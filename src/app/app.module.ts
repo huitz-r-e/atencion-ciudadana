@@ -10,11 +10,12 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage()), provideFirebaseApp(() => initializeApp({"projectId":"atencionciudadana-b0edd","appId":"1:263208147296:web:6ed8ce9dc7bdb5ebc02605","databaseURL":"https://atencionciudadana-b0edd-default-rtdb.firebaseio.com","storageBucket":"atencionciudadana-b0edd.appspot.com","apiKey":"AIzaSyDLCZLVtix2bBE_mXmVRwImLf4XfQsbf2o","authDomain":"atencionciudadana-b0edd.firebaseapp.com","messagingSenderId":"263208147296","measurementId":"G-HMYSKXH74T"})), provideDatabase(() => getDatabase()),],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage()), provideFirebaseApp(() => initializeApp(environment.firebase)), provideDatabase(() => getDatabase()),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
